@@ -3,8 +3,7 @@ class Solution:
         c = 0
         for i in range(len(haystack)-len(needle)+1):
             j = i+len(needle)
-            k = slice(i,j,1)
-            if haystack[k]==needle:
+            if haystack[slice(i,j)]==needle:
                 return c
             c +=1
         return -1
