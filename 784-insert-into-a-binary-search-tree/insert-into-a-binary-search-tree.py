@@ -9,9 +9,9 @@ class Solution:
         if root is None:
             root = TreeNode(val)
             return root
-        if root.left is None and val<root.val:
+        if not root.left and val<root.val:
             root.left = TreeNode(val)
-        elif root.right is None and val>root.val:
+        elif not root.right and val>root.val:
             root.right = TreeNode(val)
         
         elif val<root.val:
