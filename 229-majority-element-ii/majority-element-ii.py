@@ -8,6 +8,7 @@ class Solution:
                 d[i] = 1
             else:
                 d[i] +=1
-            if d[i]>n and i not in ans:
+            if d[i]>n :
                 ans.append(i)
-        return ans
+        ans = set(ans)
+        return list(ans)
