@@ -5,7 +5,6 @@ class Solution:
             j = nums2.index(i)+1
             while j<len(nums2) and nums2[j]<i:
                 j+=1
-            print(j)
             if j<len(nums2) and nums2[j]>i:
                 ans.append(nums2[j])
             else:
