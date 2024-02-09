@@ -6,6 +6,4 @@ class Solution:
         for i in nums1:
             if i in nums2:
                 ans.add(i)
-        if len(ans)==0:
-            return []
         return list(ans)
