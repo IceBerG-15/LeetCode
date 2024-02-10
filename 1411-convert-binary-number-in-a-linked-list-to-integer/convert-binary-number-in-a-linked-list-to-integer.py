@@ -9,10 +9,4 @@ class Solution:
         while head:
             s +=str(head.val)
             head = head.next
-        count=0
-        ans = 0
-        for i in s[::-1]:
-            if i=='1':
-                ans +=2**count
-            count +=1
-        return ans
+        return int(s,2)
