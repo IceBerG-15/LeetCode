@@ -8,9 +8,9 @@ class Solution:
     def isMirror(self,left,right):
         if not left and not right:
             return True
-        elif not left or not right:
+        if not left or not right:
             return False
-        elif left.val!=right.val:
+        if left.val!=right.val:
             return False
         return self.isMirror(left.left,right.right) and self.isMirror(left.right,right.left)
 
