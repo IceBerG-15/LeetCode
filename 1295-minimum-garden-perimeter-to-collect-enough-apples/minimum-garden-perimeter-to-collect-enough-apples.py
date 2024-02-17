@@ -1,8 +1,7 @@
 class Solution:
     def minimumPerimeter(self, neededApples: int) -> int:
-        total = 0
         n = 0
-        while total<neededApples:
+        while neededApples>0:
             n +=1
-            total +=12*n*n
+            neededApples-=12*n*n
         return 8*n
