@@ -15,7 +15,6 @@ class Solution:
         ans = ''
         for key,val in d:
             ans +=(str(val)+key)
-        print(ans)
         return self.count(n-1,ans)
 
     def countAndSay(self, n: int) -> str:
