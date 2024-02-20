@@ -14,7 +14,7 @@ class Solution:
             i = j 
         ans = ''
         for key,val in d:
-            ans +=(str(val)+str(key))
+            ans +=(str(val)+key)
         print(ans)
         return self.count(n-1,ans)
 
