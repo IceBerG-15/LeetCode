@@ -12,10 +12,10 @@ class Solution:
                 j +=1
             d.append((word[i],count))
             i = j 
-        ans = ''
+        word = ''
         for key,val in d:
-            ans +=(str(val)+key)
-        return self.count(n-1,ans)
+            word +=(str(val)+key)
+        return self.count(n-1,word)
 
     def countAndSay(self, n: int) -> str:
         if n==1:
