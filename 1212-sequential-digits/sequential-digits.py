@@ -8,4 +8,5 @@ class Solution:
                 num = int(seq[i:j])
                 if low<=num<=high:
                     ans.append(num)
-        return sorted(ans)
+        ans.sort()
+        return ans
