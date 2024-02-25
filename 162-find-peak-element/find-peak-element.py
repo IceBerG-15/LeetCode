@@ -9,7 +9,7 @@ class Solution:
             mid = left + (right-left)//2
             if mid==0 and nums[mid]<=nums[mid+1]:
                 return mid+1
-            elif (nums[mid-1]<nums[mid]>nums[mid+1]) or (mid==0 and nums[mid]>=nums[mid+1]):
+            elif (mid==0 and nums[mid]>=nums[mid+1]) or (nums[mid-1]<nums[mid]>nums[mid+1]):
                 return mid
             elif nums[mid-1]>nums[mid]:
                 right = mid-1
