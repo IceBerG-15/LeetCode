@@ -1,14 +1,12 @@
 class Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
-        hash = {}
+        freq = [0]*101
+        max_freq = 0
         for i in nums:
-            if i not in hash:
-                hash[i] = 1
-            else:
-                hash[i] +=1
-        m = max(hash.values())
+            freq[i] += 1
+            max_freq = max(max_freq,freq[i])
         count = 0
-        for i in hash:
-            if hash[i]==m:
-                count +=hash[i]
+        for i in freq:
+            if i==max_freq:
+                count +=i
         return count
