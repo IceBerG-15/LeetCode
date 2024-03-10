@@ -1,9 +1,6 @@
 class Solution:
     def eliminateMaximum(self, dist: List[int], speed: List[int]) -> int:
-        time = []
-        for i in range(len(dist)):
-            time.append(dist[i]/speed[i])
-        time.sort()
+        time = sorted([d/s for d,s in zip(dist,speed)])
         ans = 0
         for i in range(len(time)):
             if time[i]<=i:
