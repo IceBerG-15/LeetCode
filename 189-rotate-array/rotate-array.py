@@ -7,7 +7,6 @@ class Solution:
         i = k%n
         if i==0:
             return nums
-        a = nums[-i:]
-        for i in a[::-1]:
-            nums.pop()
-            nums.insert(0,i)
+        for _ in range(i):
+            a = nums.pop()
+            nums.insert(0,a)
