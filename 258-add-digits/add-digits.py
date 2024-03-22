@@ -3,7 +3,11 @@ class Solution:
         def func(n):
             if 0<=n<=9:
                 return n
-            l = list(map(int,list(str(n))))
-            return func(sum(l))
+            s = 0
+            while n>0:
+                r = n%10
+                s +=r
+                n //=10
+            return func(s)
         
         return func(num)
