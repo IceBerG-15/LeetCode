@@ -5,3 +5,4 @@ class Solution:
             if i in l:
                 return i
             l.add(i)
+        
