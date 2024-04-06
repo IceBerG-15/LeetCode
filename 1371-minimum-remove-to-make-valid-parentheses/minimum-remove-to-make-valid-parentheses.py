@@ -9,12 +9,12 @@ class Solution:
                     stack.pop()
                 else:
                     stack.append(i)
-        ans = []
+        ans = ''
         for i, ch in enumerate(s):
             if stack and i==stack[0]:
                 stack.pop(0)
             else:
-                ans.append(ch)
-        return ''.join(ans)
+                ans+=ch
+        return ans
 
         
