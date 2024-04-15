@@ -7,12 +7,20 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
 
-        def dfs(node,num):
+        nums = []
+
+        def dfs(node,curr_str):
             if not node:
-                return 0
+                return 
             if not node.left and not node.right:
-                return num*10 +node.val
-            return dfs(node.left,num*10+node.val)+dfs(node.right,num*10+node.val)
+                nums.append(int(curr_str + str(node.val)))
+                return
+            curr_str += str(node.val)
+            dfs(node.left,curr_str)
+            dfs(node.right,curr_str)
+        
+        dfs(root,'')
+        return sum(nums)
         
         return dfs(root,0)
         
