@@ -3,11 +3,11 @@ class Solution:
         a, b, c = 0, 1, 1
         
         if n==0:
-            return 0
+            return a
         elif n==1:
-            return 1
+            return b
         elif n==2:
-            return 1
+            return c
         else:
             for _ in range(n-2):
                 d = a+b+c
