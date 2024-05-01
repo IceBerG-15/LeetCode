@@ -4,6 +4,5 @@ class Solution:
             return word
         
         idx = word.index(ch)
-        ch = word[:idx+1]
-        word = ch[::-1]+word[idx+1:]
+        word = word[:idx+1][::-1]+word[idx+1:]
         return word
