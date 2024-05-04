@@ -6,7 +6,7 @@ class Solution:
         left = 0
         right = n-1
         while left<=right:
-            if  people[left]+people[right]<=limit:
+            if people[left]+people[right]<=limit:
                 boats +=1
                 left +=1
                 right -=1
