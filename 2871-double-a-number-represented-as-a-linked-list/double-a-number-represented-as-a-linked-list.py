@@ -5,14 +5,30 @@
 #         self.next = next
 class Solution:
     def doubleIt(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        num = ''
-        while head:
-            num += str(head.val)
-            head = head.next
-        num = int(num)*2
-        sys.set_int_max_str_digits(100000)
-        num = [int(i) for i in str(num)]
-        final = None
-        for i in num[::-1]:
-            final = ListNode(i,final)
-        return final
+        def reverse(node):
+            prev = None
+            current_node = node
+
+            while current_node:
+                next_node = current_node.next
+                current_node.next = prev
+                prev = current_node
+                current_node = next_node
+
+            return prev
+        
+        reversed_head = reverse(head)
+        carry = 0
+        ptr = reversed_head
+        while ptr:
+            n = 2*ptr.val
+            ptr.val = n%10 + carry
+            carry = n//10
+            if ptr.next is None:
+                prev = ptr
+            ptr = ptr.next
+        
+        if carry!=0:
+            prev.next = ListNode(carry,None)
+        
+        return reverse(reversed_head)
