@@ -1,9 +1,12 @@
 class Solution:
     def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:
-        fractions = {}
-        n = len(arr)
-        for i in range(n):
-            for j in range(i+1,n):
-                fractions[arr[i]/arr[j]] = [arr[i],arr[j]]  
-        frac = sorted(fractions)
-        return fractions[frac[k-1]]
+        res = []
+        
+        for i in range(len(arr)):
+            for j in range(i + 1, len(arr)):
+                heappush(res, (-(arr[i] / arr[j]), arr[i], arr[j]))
+                
+                if len(res) > k:
+                    heappop(res)
+        
+        return [res[0][1], res[0][2]]
