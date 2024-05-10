@@ -5,5 +5,5 @@ class Solution:
         for i in range(n):
             for j in range(i+1,n):
                 fractions[arr[i]/arr[j]] = [arr[i],arr[j]]  
-        fractions = sorted(fractions.items(), key = lambda x:x[0])
-        return fractions[k-1][1]
+        frac = sorted(fractions)
+        return fractions[frac[k-1]]
