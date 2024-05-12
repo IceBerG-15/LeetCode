@@ -1,6 +1,7 @@
 class Solution:
     def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
-        n, res = len(grid), []
+        n = len(grid)
+        res = []
 
         for i in range(1, n - 1):
             temp_row = []
