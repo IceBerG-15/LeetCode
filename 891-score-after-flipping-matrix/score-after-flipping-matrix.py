@@ -7,8 +7,6 @@ class Solution:
             set_count = 0
             for i in range(n):
                 set_count += grid[i][j]==grid[i][0]
-
-            # set_count = sum(grid[i][j] == grid[i][0] for i in range(n))
             res += max(set_count, n - set_count) * (1 << (m - 1 - j))
 
         return res
