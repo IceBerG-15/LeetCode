@@ -9,15 +9,14 @@ class Solution:
             else:
                 hash1[i] += 1
         
-        for i in nums2:
-            if i not in hash2:
-                hash2[i] = 1
-            else:
-                hash2[i] += 1
-            
+
         ans = []
-        for i in hash1:
-            if i in hash2:
-                ans += [i]*(min(hash1[i],hash2[i]))
+        for i in nums2:
+            if i in hash1:
+                ans.append(i)
+                hash1[i] -= 1
+                if hash1[i]==0:
+                    del hash1[i]
+
         
         return ans
