@@ -19,13 +19,12 @@ class Solution:
         for i in preord[::-1]:
             if i==0 or i==1:
                 stack.append(i)
-            elif i==2 or i==3:
+            else:
                 a = stack.pop()
                 b = stack.pop()
                 if i==2:
                     stack.append(a or b)
                 else:
                     stack.append(a and b)
-            
-            
+           
         return True if stack[0]==1 else False
