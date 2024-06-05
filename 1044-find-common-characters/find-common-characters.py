@@ -5,8 +5,5 @@ class Solution:
         for word in words:
             initial &= Counter(word)
 
-        ans = []
-        for ch in initial:
-            ans += [ch]*initial[ch]
-        return ans
+        return list(initial.elements())
         
